@@ -4,8 +4,7 @@ A single self-contained HTML geography trainer: flashcards, a zoomable clickable
 world map, a sortable country/capital list, and six quiz modes covering flags,
 capitals, and country locations. Available in English and Spanish.
 
-**[Play it live](#)** — *(replace this with your GitHub Pages URL once deployed
-— see below)*
+**[Play it live](https://moicoll.github.io/Meridian/)**
 
 ## Features
 
@@ -30,25 +29,6 @@ capitals, and country locations. Available in English and Spanish.
 It's one HTML file with everything embedded (data, flags, map geometry). Just
 open `index.html` in a browser — locally, from a USB stick, wherever. No build
 step, no server, no dependencies.
-
-## Deploying to GitHub Pages
-
-If you're reading this because you just cloned/downloaded this repo and want
-your own copy live:
-
-```bash
-# from inside the project folder
-git init
-git add index.html README.md LICENSE
-git commit -m "Initial commit"
-git branch -M main
-git remote add origin https://github.com/<your-username>/<repo-name>.git
-git push -u origin main
-```
-
-Then on GitHub: **Settings → Pages → Source → Deploy from a branch → `main` /
-`(root)` → Save**. It'll be live at
-`https://<your-username>.github.io/<repo-name>/` within a minute or two.
 
 ## Credits
 
