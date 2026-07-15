@@ -241,6 +241,12 @@ svg.map:active{cursor:grabbing}
   .list-row .flagcell img{width:24px}
   .topbar{gap:10px}
   .readout{gap:12px;font-size:11px}
+  .map-info{min-width:0;max-width:44%;padding:8px 10px;left:8px;bottom:8px;border-radius:9px}
+  .map-info .flag{width:32px;margin-bottom:5px}
+  .map-info h4{font-size:13px;margin:0 0 2px}
+  .map-info .row{font-size:10px;margin-top:1px;line-height:1.3}
+  .map-info .row-extra{display:none}
+  .map-info.empty{padding:6px 9px}
 }
 </style>
 </head>
@@ -563,7 +569,7 @@ const MAP_W=720,MAP_H=360;
 function computeBase(){
   const narrow=typeof window!=='undefined'&&window.innerWidth&&window.innerWidth<=640;
   if(narrow){
-    const w=460,h=288;
+    const w=380,h=288;
     return {x:(MAP_W-w)/2,y:12,w,h};
   }
   return {x:0,y:12,w:MAP_W,h:288};
@@ -747,8 +753,8 @@ function showExpInfo(f){
   const nm=localName(c.iso2), cap=localCapital(c.iso2);
   info.innerHTML=`<img class="flag" src="${flag(c.iso2)}" alt=""><h4>${nm}</h4>`+
     `<div class="row">${t('capital')} <b>${cap}</b></div>`+
-    `<div class="row">${t('regionLbl')} <b>${t(REGION_KEYS[c.region]||'')||c.region}</b> · ${c.subregion||''}</div>`+
-    `<div class="row mono">${c.iso2.toUpperCase()}</div>`;
+    `<div class="row row-extra">${t('regionLbl')} <b>${t(REGION_KEYS[c.region]||'')||c.region}</b> · ${c.subregion||''}</div>`+
+    `<div class="row mono row-extra">${c.iso2.toUpperCase()}</div>`;
   placeMapLabel(explorerSvg, c.iso2, [nm, cap]);
 }
 
