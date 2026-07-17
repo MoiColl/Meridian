@@ -685,7 +685,9 @@ function attachPanZoom(svg,onViewChange){
   };
 }
 
-const MICRO_STATES=new Set(['va','mc','nr','tv','sm','li','sc','gd','bb','kn']);
+// countries small enough that their real map shape is unreliable to tap precisely,
+// especially at mobile zoom levels — these get a supplementary always-clickable dot
+const MICRO_STATES=new Set(['va','mc','nr','tv','sm','li','sc','gd','bb','kn','ad','sg','lc','mt','dm','bh','mu','vc','ag','lu']);
 function buildMap(shell,{onClick,onHover,dimNonRegion,onViewChange,initialView}={}){
   shell.innerHTML='';
   const base0=computeBase();
